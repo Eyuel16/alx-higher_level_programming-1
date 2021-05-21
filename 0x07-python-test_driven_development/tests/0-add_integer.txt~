@@ -1,0 +1,25 @@
+# run test with python3 -m doctest -v ./tests/0-add_integer.txt
+
+First import method to test
+>>> add_integer = __import__('0-add_integer').add_integer
+
+SUCCESS CASES:
+
+Test signed and unsigned ints and floats:
+     >>> print(add_integer(1, 2))
+     3
+     >>> print(add_integer(-1, 2))
+     1
+     >>> print(add_integer(1.5, 2.9))
+     3
+     >>> print(add_integer(-2.9, 1))
+     -1
+
+Test use of default b=98 value:
+     >>> print(add_integer(1))
+     99
+
+FAIL CASES:
+
+Test no args:
+     
