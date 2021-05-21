@@ -1,0 +1,72 @@
+# Run test using python3 -m doctest -v ./tests/2-matrix_divided.txt
+
+Import module
+
+       >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+SUCCESS:
+
+Test int and float same size lists:
+
+     >>> matrix_divided([[1,2,3],[4,5,6]],3)
+     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+     >>> matrix_divided([[1,2,3],[4,5,6]],3)
+     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+FAILER:
+
+Test empty and diffrent size matrix:
+
+     >>> matrix_divided([[1,2,3],[4,5]],6)
+     Traceback (most recent call last):
+     ...
+     TypeError: Each row of the matrix must have the same size
+
+     >>> matrix_divided([], 2)
+     Traceback (most recent call last):
+     ...
+     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+     >>> print(matrix_divided([[1, 2, 3], [4]], 2))
+     Traceback (most recent call last):
+     ...
+     TypeError: Each row of the matrix must have the same size
+
+     >>> print(matrix_divided([[1, 2, 3], [4, 5, 6], [7]], 2))
+     Traceback (most recent call last):
+     ...
+     TypeError: Each row of the matrix must have the same size
+
+Test div data type and division by zero:
+
+    >>> matrix_divided([[1, 2, 3],[4, 5, 6]], 'a')
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1, 2, 3],[4, 5, 6]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Test other matrix data types:
+
+    >>> matrix_divided(1, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test extra args:
+
+     >>> print(matrix_divided([[1, 2, 3], [4, 5, 6.7]], 2, 100))
+     Traceback (most recent call last):
+     ...
+     TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+Test too small number args:
+
+     >>> print(matrix_divided([[1, 2], [3, 4]]))
+     Traceback (most recent call last):
+     ...
+     TypeError: matrix_divided() missing 1 required positional argument: 'div'
