@@ -1,8 +1,11 @@
+#!/usr/bin/python3
 """
 Module 4-print_square
 prints a square with the character #
 accepts the size
 """
+
+
 def print_square(size):
     """
     Prints square with #
