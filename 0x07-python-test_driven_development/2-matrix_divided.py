@@ -1,8 +1,11 @@
+#!/usr/bin/python3
 """
 Module 2-matrix_divide
 Contains a function to divide all elements if a natrux
 recieves a matrix and a divider
 """
+
+
 def matrix_divided(matrix, div):
     msg = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) is not list or len(matrix) == 0 or len(matrix[0]) == 0:
