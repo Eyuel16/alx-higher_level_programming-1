@@ -4,6 +4,8 @@ Module 0-add_integer
 Contains on function that returns sum of two integers
 Accepts two values (int or float) and cast them to an int
 """
+
+
 def add_integer(a, b=98):
     """
     Returns a + b as int
