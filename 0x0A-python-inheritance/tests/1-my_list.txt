@@ -26,4 +26,3 @@ Test with empty list:
      >>> m = MyList()
      >>> m.print_sorted()
      []
-
