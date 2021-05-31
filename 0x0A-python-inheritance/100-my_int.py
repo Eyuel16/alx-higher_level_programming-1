@@ -19,15 +19,9 @@ class MyInt(int):
         self.num = num
 
     def __eq__(self, other):
-        """
-        Return:
-           True if both not equal
-        """
+        """ True if both not equal """
         return self.num != other
 
     def __ne__(self, other):
-        """
-        Return:
-           True if both equal
-        """
+        """ Return True if both equal """
         return self.num == other
