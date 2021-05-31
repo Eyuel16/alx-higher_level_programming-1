@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module 1-my_list
-Inherits from list
+Contains class MyList
 and with funtion print sorted
 """
 
