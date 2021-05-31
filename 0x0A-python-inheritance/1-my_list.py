@@ -12,6 +12,7 @@ class MyList(list):
     Module:
     print_sorted(self)
     """
+
     def print_sorted(self):
         """ lists available attributes """
         print(sorted(self))
