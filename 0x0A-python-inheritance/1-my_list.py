@@ -14,9 +14,4 @@ class MyList(list):
 
     def print_sorted(self):
         """ lists available attributes """
-        s = self[:]
-        for i in range(len(s)):
-            for j in range(len(s)):
-                if s[i] <= s[j]:
-                    s[i], s[j] = s[j], s[i]
-        print(s)
+        print(sorted(self))
