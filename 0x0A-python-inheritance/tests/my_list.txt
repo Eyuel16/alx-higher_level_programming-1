@@ -1,0 +1,55 @@
+# run test with python3 -m doctest -v ./tests/0-add_integer.txt
+
+First import method to test
+>>> MyList = __import__('1-my_list').MyList
+
+Success cases:
+
+Test with numbers:
+
+     >>> m1 = MyList()
+     >>> m1.append(4)
+     >>> m1.append(1)
+     >>> m1.append(2)
+     >>> m1.append(7)
+     >>> m1.append(3)
+
+     >>> m1
+     [4, 1, 2, 7, 3]
+     >>> m1.print_sorted()
+     [1, 2, 3, 4, 7]
+     >>> m1
+     [4, 1, 2, 7, 3]
+
+Test with empty list:
+
+     >>> m = MyList()
+     >>> m.print_sorted()
+     []
+
+Faile Cases:
+
+Tests with c char data type:
+
+      >>> m2 = MyList()
+      >>> m2.append('a')
+      >>> m2.append(1)
+      >>> m2.append(4)
+      >>> m2.append('c')
+      >>> m2
+      ['a', 1, 4, 'c']
+      >>> m2.print_sorted()
+      Traceback (most recent call last):
+      ...
+      TypeError: unorderable types: int() >= str()
+
+Tests with array data type:
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> m3 = MyList()
+    >>> m3.append([1, 2, 3])
+    >>> m3.append(5)
+    >>> m3.print_sorted()
+    Traceback (most recent call last):
+    ...
+    TypeError: unorderable types: int() >= list()
