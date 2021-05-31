@@ -13,6 +13,7 @@ class MyInt(int):
         __eq__(self, other)
         __ne__(self, other)
     """
+
     def __init__(self, num):
         """initialize num"""
         self.num = num

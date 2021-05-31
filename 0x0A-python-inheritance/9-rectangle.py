@@ -19,6 +19,7 @@ class Rectangle(BaseGeometry):
         area(self)
         __str__
     """
+
     def __init__(self, width, height):
         """validate and initialize width and height
         Args:

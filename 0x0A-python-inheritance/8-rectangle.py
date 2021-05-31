@@ -16,6 +16,7 @@ class Rectangle(BaseGeometry):
     Methods:
         __init__(self, width, height)
     """
+
     def __init__(self, width, height):
         """validate and initialize width and height
         Args:

@@ -19,6 +19,7 @@ class Square(Rectangle):
     methods:
         __init__(self, size)
     """
+
     def __init__(self, size):
         """initializes size
         Args:
