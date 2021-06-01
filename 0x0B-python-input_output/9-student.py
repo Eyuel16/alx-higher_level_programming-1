@@ -6,10 +6,6 @@ and a method to retrieve a dictionary representation of the class
 """
 
 
-import json
-from json import JSONEncoder
-
-
 class Student:
     """ defines a student based on full name and age """
 
