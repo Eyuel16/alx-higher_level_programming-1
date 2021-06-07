@@ -24,4 +24,6 @@ class Student:
             for attr in attrs:
                 if attr in self.__dict__.keys():
                         found_attr[attr] = self.__dict__[attr]
-            return self.__dict__
+            return found_attr
+    def reload_from_json(self, json):
+        return json.__dict__.keys()
