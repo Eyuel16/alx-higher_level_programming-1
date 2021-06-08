@@ -34,15 +34,16 @@ class Base:
         dic = []
 
         if list_objs is None:
-            return dic
+            with open(myfile, "w") as my_file:
+                my_file.write("[]")
+        else:
+            for obj in list_objs:
+                dic.append(cls.to_dictionary(obj))
 
-        for obj in list_objs:
-            dic.append(cls.to_dictionary(obj))
+                myfile = cls.__name__ + ".json"
 
-        myfile = cls.__name__ + ".json"
-
-        with open(myfile, "w") as my_file:
-            my_file.write(cls.to_json_string(dic))
+                with open(myfile, "w") as my_file:
+                    my_file.write(cls.to_json_string(dic))
 
     @staticmethod
     def from_json_string(json_string):
