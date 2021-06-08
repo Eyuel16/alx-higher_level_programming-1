@@ -63,13 +63,13 @@ retruns the list of the JSON string representation of json_string
     def load_from_file(cls):
         """ returns a list of instances """
         filename = cls.__name__ + ".json"
-        l = []
+        listObjects = []
         try:
             with open(filename, "r") as f:
                 strinstances = f.read()
                 listOfInstances = cls.from_json_string(strinstances)
             for i, dic in enumerate(listOfInstances):
-                l.append(cls.create(**listOfInstances[i]))
+                listObjects.append(cls.create(**listOfInstances[i]))
         except BaseException:
             pass
-        return l
+        return listObjects
