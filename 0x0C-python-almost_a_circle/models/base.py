@@ -49,8 +49,8 @@ retruns the list of the JSON string representation of json_string
         """
         if json_string is None or len(json_string) == 0:
             json_string = "[]"
-        else:
-            return json.loads(json_string)
+
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
