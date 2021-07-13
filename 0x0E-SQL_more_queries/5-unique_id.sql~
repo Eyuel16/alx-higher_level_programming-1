@@ -1,8 +1,0 @@
--- creates a script
--- named unique_id
--- will not fail if it already exists
-
-CREATE TABEL IF NOT EXISTS unique_id (
-       id INT UNIQUE DEFAULT 1,
-       name VARCHAR(256)
-);
