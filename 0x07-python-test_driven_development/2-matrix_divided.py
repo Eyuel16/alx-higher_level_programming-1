@@ -20,17 +20,22 @@ def matrix_divided(matrix, div):
         TypeError: If div is not int or float.
         ZeroDivisionError: If div is zero.
     """
-    msg = "matrix must be a matrix (list of lists) of integers/floats"
-    if type(matrix) is not list or len(matrix) == 0 or len(matrix[0]) == 0:
-        raise TypeError(msg)
-    for value in matrix:
-        if type(value) is not list:
-            raise TypeError(msg)
+    if not isinstance(matrix, list) or len(matrix) == 0:
+        raise TypeError("matrix must be a matrix (list of lists) " +
+                        "of integers/floats")
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    elif div == 0:
+    if div == 0:
         raise ZeroDivisionError("division by zero")
-    row = len(matrix[0])
-    if not all((len(size) == row) for size in matrix):
-        raise TypeError("Each row of the matrix must have the same size")
-    return ([list(map(lambda x: round(x / div, 2), r))for r in matrix])
+
+    for i in matrix:
+        if not isinstance(i, list) or len(i) == 0:
+            raise TypeError("matrix must be a matrix (list of lists) " +
+                            "of integers/floats")
+        if len(i) != len(matrix[0]):
+            raise TypeError("Each row of the matrix must have the same size")
+        for j in i:
+            if not isinstance(j, (int, float)):
+                raise TypeError("matrix must be a matrix (list of lists) " +
+                                "of integers/floats")
+    return [[round(j / div, 2) for j in i] for i in matrix]
