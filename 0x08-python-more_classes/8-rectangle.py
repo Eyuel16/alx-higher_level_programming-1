@@ -26,6 +26,7 @@ class Rectangle():
         __str__(self)
         __repr__(self)
         __del__(self)
+        bigger_or_equal(rect_1, rect_2)
     """
     number_of_instances = 0
     print_symbol = "#"
