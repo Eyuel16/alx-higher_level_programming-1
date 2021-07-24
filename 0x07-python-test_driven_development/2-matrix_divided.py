@@ -7,6 +7,19 @@ recieves a matrix and a divider
 
 
 def matrix_divided(matrix, div):
+    """
+    matrix_divided: divides all elements of a matrix
+    Args:
+        matrix (int, float):  list of lists of integers or floats
+        div (int): divident
+    Returns:
+        int
+    Raises:
+        TypeError: If matrix is not list of lists containing int or float.
+        TypeError: If sublists are not all same size.
+        TypeError: If div is not int or float.
+        ZeroDivisionError: If div is zero.
+    """
     msg = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) is not list or len(matrix) == 0 or len(matrix[0]) == 0:
         raise TypeError(msg)
