@@ -7,5 +7,4 @@ for (let key in dict) {
   }
   newDic[dict[key]].push(key);
 }
-
 console.log(newDic);
