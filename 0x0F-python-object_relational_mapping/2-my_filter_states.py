@@ -16,9 +16,11 @@ if __name__ == '__main__':
         port=3306)
 
     cursor = db.cursor()
-    cursor.execute("SELECT *FROM states ORDER BY id ASC")
+    cursor.execute("SELECT *
+                    FROM states
+                    Where name = '{}'
+                    ORDER BY id ASC".format(argv[4]))
     for row in cursor.fetchall():
-        if row[1] == argv[4]:
             print(row)
     cursor.close()
     db.close()
