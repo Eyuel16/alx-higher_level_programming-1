@@ -16,12 +16,12 @@ if __name__ == '__main__':
         port=3306)
 
     cursor = db.cursor()
-    cursor.execute("SELECT cities.id, cities.name, states.name \
+    cursor.execute("SELECT cities.name \
                     FROM states \
                     INNER JOIN cities ON states.id = cities.state_id \
                     WHERE Binary states.name=%s \
                     ORDER BY cities.id ASC", (argv[4],))
     for row in cursor.fetchall():
-        print(row.cities.name)
+        print(row)
     cursor.close()
     db.close()
