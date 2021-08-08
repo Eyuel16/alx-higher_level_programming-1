@@ -2,8 +2,8 @@
 """
 contains the class definition of State and instatance Base
 """
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 from sys import argv
 
@@ -17,7 +17,7 @@ if __name__ == '__main__':
                            format(user, password, database),
                            pool_pre_ping=True)
     session = sessionmaker(bind=engine)
-    session_ = sesssion()
-    for row in session.query(State).order_by(State.id):
-        print("{}: {}".format(row.id, row.name))
+    session_ = session()
+    for row in session_.query(State).order_by(State.id):
+        print("{:d}: {:s}".format(row.id, row.name))
     session.close()
