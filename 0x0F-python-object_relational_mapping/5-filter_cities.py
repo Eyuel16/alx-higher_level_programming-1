@@ -22,7 +22,7 @@ if __name__ == '__main__':
                     WHERE Binary states.name=%s \
                     ORDER BY cities.id ASC", (argv[4],))
     res = []
-    for row in cur.fetchall():
+    for row in cursor.fetchall():
         res.append(row)
 
     for i in range(len(res)):
