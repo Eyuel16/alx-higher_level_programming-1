@@ -21,11 +21,18 @@ if __name__ == '__main__':
                     INNER JOIN cities ON states.id = cities.state_id \
                     WHERE Binary states.name=%s \
                     ORDER BY cities.id ASC", (argv[4],))
-    files = cursor.fetchall()
-    for row in range(len(files)):
-        if row < range(len(files)) - 1:
-            print("%s, ", row)
-        else:
-            print("%s", row)
+    res = []
+    for row in cur.fetchall():
+        res.append(row)
+
+    for i in range(len(res)):
+        res[i] = str(res[i])
+        res[i] = res[i].strip(')')
+        res[i] = res[i].strip('(')
+        res[i] = res[i].strip("'")
+        res[i] = res[i].strip(",")
+        res[i] = res[i].strip("'")
+    res = ', '.join(res)
+    print(res)
     cursor.close()
     db.close()
