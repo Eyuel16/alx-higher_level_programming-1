@@ -17,7 +17,7 @@ if __name__ == "__main__":
     db = argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
                            format(user, passwd, db), pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
+    session = sessionmaker(bind=engine)
     Base.metadata.create_all(engine)
     for row in session.query(State).order_by(State.id):
         print("{:d}: {:s}".format(row.id, row.name))
