@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-city 
+city
 """
 
 from sys import argv
