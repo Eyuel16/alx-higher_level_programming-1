@@ -14,6 +14,6 @@ if __name__ == '__main__':
     url = url + argv[1] + "/" + argv[2] + "/commits"
     res = requests.get(url)
     lists_ = res.json()
-    for dic in lists_:
+    for dic in lists_[0:10]:
         print("{}: {}".format(dic.get('sha'),
                               dic.get('commit').get('author').get('name')))
