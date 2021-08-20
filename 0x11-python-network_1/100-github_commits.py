@@ -11,7 +11,7 @@ from sys import argv
 
 if __name__ == '__main__':
     url = "https://api.github.com/repos/"
-    url = url + argv[1] + "/" + argv[2] + "/commits"
+    url = url + argv[2] + "/" + argv[1] + "/commits"
     res = requests.get(url)
     lists_ = res.json()
     for dic in lists_[0:10]:
