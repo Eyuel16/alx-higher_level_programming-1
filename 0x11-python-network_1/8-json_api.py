@@ -16,7 +16,7 @@ if __name__ == '__main__':
     else:
         alpha = argv[1]
     url = "http://0.0.0.0:5000/search_user"
-    datas = {'q':alpha}
+    datas = {'q': alpha}
     r = requests.post(url, data=datas)
     try:
         mydic = r.json()
