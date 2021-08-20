@@ -10,18 +10,18 @@ import requests
 from sys import argv
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if len(argv) < 2:
         alpha = ""
     else:
         alpha = argv[1]
-    url = "http://0.0.0.0:5000/search_user"
-    datas = {'q': alpha}
-    r = requests.post(url, data=datas)
+    url = 'http://0.0.0.0:5000/search_user'
+    payload = {'q': alpha}
+    r = requests.post(url, data=payload)
     try:
-        mydic = r.json()
-        if mydic:
-            print("[{}] {}".format(dic.get("id"), dic.get("name")))
+        dic = r.json()
+        if dic:
+            print("[{}] {}".format(dic.get('id'), dic.get('name')))
         else:
             print("No result")
     except ValueError as e:
