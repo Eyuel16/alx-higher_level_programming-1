@@ -3,6 +3,7 @@
 fins the peak of a list
 """
 
+
 def find_peak(list_of_integers):
     """ a function to return the first peak found """
     n = len(list_of_integers)
@@ -17,5 +18,5 @@ def find_peak(list_of_integers):
             if list_of_integers[i] > list_of_integers[i - 1]:
                 return list_of_integers[i]
         if ((list_of_integers[i] >= list_of_integers[i - 1]) and
-            (list_of_integers[i] >= list_of_integers[i + 1])):
+                (list_of_integers[i] >= list_of_integers[i + 1])):
             return list_of_integers[i]
