@@ -11,9 +11,9 @@ request(process.argv[2], function (err, response, body) {
     for (const i in tasks) {
       if (tasks[i].completed) {
         if (dic[tasks[i].userId] === undefined) {
-	  dic[tasks[i].userId] = 1;
+          dic[tasks[i].userId] = 1;
         } else {
-	  dic[tasks[i].userId]++;
+          dic[tasks[i].userId]++;
         }
       }
     }
