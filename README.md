@@ -1,9 +1,11 @@
 # Higher_level_programming
 > This repository is dedicated to understanding of higher level programming. It covers object oriented programming language, and esential concepts of programming
-> especially using python.you can find each directory detail in each directories READMe.md
+> especially using python.And more with SQL and ORM's. It also contains projects with javascript, html and css.
 ### Built using
 - Python
-- C
+- javascript
+- shell
+- c
 - OS: Ubuntu 14.04 LTS
 - Style guidelines: betty -  PEP 8 (version 1.7) -  Google Style Python Docstrings
 ### Author
